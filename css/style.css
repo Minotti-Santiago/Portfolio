@@ -1,0 +1,557 @@
+/*-------------- RESETS --------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------- COLORES --------------*/
+:root{
+    --color-fondo: #141a3a;
+    --color-texto-blanco:#fff;
+    --color-fondo-images:#0652CB;
+    --color-rosa:#f12a8f;
+    --color-morado:#9554ac;
+    --color-azul:#778bcc;
+    --color-gradient:#15abc8;
+
+}
+
+/*-------------- FONTS --------------*/
+@font-face{
+    font-family:'montserrat';
+    src: url('/assets/fonts/Montserrat-VariableFont_wght.woff2');
+}
+
+
+/*-------------- ESTILOS GENERALES --------------*/
+
+body{
+    font-family: 'montserrat', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-blanco);
+}
+
+/*-------------- HEADER --------------*/
+.img-logo-header{
+    margin-left: 30px;
+}
+
+.img-logo-header img{
+    filter: invert(1);
+    width: 60px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 60px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px #343434;
+    backdrop-filter: blur(4px);
+    background-color: transparent;
+    margin-top: 20px;
+}
+
+.nav-header{
+    margin-right: 30px;
+}   
+
+.ul-nav-header{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.li-nav-header a{
+    text-decoration: none;
+    color: var(--color-texto-blanco);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.contact-btn-header{
+    filter: contrast(180%);
+    background: linear-gradient(-50deg, var(--color-azul), var(--color-morado), var(--color-rosa));
+}
+
+/*-------------- HERO --------------*/
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    gap: 60px;
+    width: 100%;
+}
+
+.hero-info-container{
+    width: 45%;
+}
+
+.hero-info-container p{
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.span-hero{
+    font-size: 5rem;
+    background: linear-gradient(45deg, var(--color-azul), var(--color-morado), var(--color-rosa));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: cambio-color 5s infinite;
+    filter: contrast(300%);
+}
+
+.hero-img-container img{
+    width: 300px;
+}
+
+
+/*-------------- MAIN --------------*/
+.main{
+    margin-top: 60px;
+}
+
+/*-------------- SKILLS --------------*/
+.title, .skills-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.title h2{
+    font-size: 3rem;
+}
+
+.skills-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 100px;
+}
+
+.skills-container-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.skills-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.skill-container-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.knowledge-bar-container-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 90px;
+}
+
+.knowledge-bar-container{
+    width: 100%;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    timeline-scope: view();
+    position: relative;
+}
+
+.knowledge-bar{
+    width: 100%;
+    height: 10px;
+    border-radius: 20px;
+    background:linear-gradient(to right, var(--color-morado), var(--color-gradient));
+    box-shadow:
+    0 0 5px var(--color-morado),
+    0 0 5px var(--color-gradient);
+    position: absolute;
+}
+
+.skills-svg{
+    width: 35px;
+}
+
+.svg-html{
+    fill:#e5532d ;
+}
+
+.svg-css{
+    fill:#6b399c;
+}
+
+.svg-js{
+    fill:#f1d12d;
+}
+
+.svg-react{
+    fill:#61dbfb;
+}
+
+.knowledge-level{
+    min-width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Animaciones para las barras de conocimiento */
+@keyframes fillBar {
+    from { 
+        width: 0; 
+    }
+    to { 
+        width: var(--target-width, 80%); 
+    }
+}
+
+/* Clase para activar la animación */
+.knowledge-bar.animate {
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+/* Configuración específica para cada barra */
+.knowledge-bar-html { --target-width: 80%; }
+.knowledge-bar-css { --target-width: 90%; }
+.knowledge-bar-js { --target-width: 25%; }
+.knowledge-bar-react { --target-width: 20%; }
+.knowledge-bar-tailwind { --target-width: 60%; }
+
+/*-------------- PROYECTS --------------*/
+
+.proyect-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/*---------- FLIP CARDS ----------*/
+
+.flip-card {
+    width: 350px;
+    height: 220px;
+    perspective: 1000px; /* For 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s; /* Smooth flip animation */
+    transform-style: preserve-3d; /* Preserve 3D space for children */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back when flipped away */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.flip-card-front {
+    background-color: var(--color-gradient);
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.flip-card-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background:linear-gradient(to left, var(--color-gradient), var(--color-morado));
+    filter: contrast(150%);
+    transform: rotateY(180deg); /* Start with the back hidden */
+}
+
+.flip-card-back h3{
+    font-size: 1.5rem;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flip on hover */
+}
+
+.proyect-img{
+    width: 100%;
+}
+
+/*---------- GRID CARDS ----------*/
+
+.grid{
+    display: grid;
+    justify-self: center;
+    width: 80%;
+    gap: 10px;
+    margin-top: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.proyect-1{
+    width: 100%;
+    grid-column: 1 /span 2;
+}
+
+.proyect-2{
+    width: 350px;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.proyect-3{
+    width: 98%;
+    grid-column: 2 /span 3;
+}
+
+.proyect-4{
+    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.proyect-5{
+    width: 100%;
+    grid-column: 1 /span 2 ;
+    grid-row: 3;
+}
+
+.proyect-6{
+    width: 100%;
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.proyect-7{
+    width: 100%;
+    grid-column: 2 /span 3;
+    grid-row: 4;
+}
+
+.img-proyect-3{
+    transform: scaleY(0.92);
+    width: 90%;
+}
+
+.img-proyect-5{
+    transform: scaleY(0.95);
+    width: 95%;
+}
+
+.img-proyect-7{
+    transform: scaleY(0.95);
+    width: 75%;
+}
+
+.proyect-8{
+    width: 100%;
+    grid-column: 1;
+    grid-row: 4;
+}
+
+/*-------------- TRAYECTORY --------------*/
+
+.trayectory-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.trayectory-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.trayectory-img{
+    width: 350px;
+    box-shadow:-10px 10px 5px var(--color-gradient);
+    border-radius: 5px;
+}
+
+.trayectory-item-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 70%;
+}
+
+.trayectory-1, .trayectory-3{
+    flex-direction: row-reverse;
+}
+
+.trayectory-info-container{
+    display: flex;
+    flex-direction: column;
+    text-wrap: pretty;
+}
+
+.trayectory-title{
+    font-size: 1.4rem;
+    margin: 20px 0;
+}
+
+/*-------------- FOOTER --------------*/
+
+.footer{
+    width: 100%;
+    min-height: 40px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-azul);
+    padding: 20px 0;
+}
+
+.svg-footer{
+    width: 37px;
+    fill: #fff;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.footer-social-media-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg-github{
+    margin-right: 20px;
+    scale: 1.4;
+}
+
+
+/*-------------- CONTACT --------------*/
+
+.contact-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+    margin-top: 50px;  
+}
+
+.contact-form-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    gap: 20px;
+}
+
+.contact-form-container form input, .contact-form-container form textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.contact-form-container form textarea{
+    height: 100px;
+    resize: none;
+}
+
+.contact-form-container form label{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+
+.contact-form-container-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.contact-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    height: 200px;
+}
+
+.contact-info-container div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-info-container h2{
+    font-size: 2rem;
+    
+}
+
+
+
