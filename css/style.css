@@ -103,7 +103,9 @@ body{
 }
 
 .hero-info-container{
-    width: 45%;
+    display: flex;
+    
+    max-width: 600px;
 }
 
 .hero-info-container p{
@@ -238,7 +240,6 @@ body{
     justify-content: center;
 }
 
-/* Animaciones para las barras de conocimiento */
 @keyframes fillBar {
     from { 
         width: 0; 
@@ -248,7 +249,6 @@ body{
     }
 }
 
-/* Clase para activar la animación */
 .knowledge-bar.animate {
     animation: fillBar 1.5s ease-out forwards;
 }
@@ -271,10 +271,16 @@ body{
     scroll-margin-top: 100px;
 }
 
+.proyects-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 /*---------- FLIP CARDS ----------*/
 
 .flip-card {
-    width: 350px;
     height: 220px;
     perspective: 1000px; /* For 3D effect */
 }
@@ -332,72 +338,47 @@ body{
 .grid{
     display: grid;
     justify-self: center;
-    width: 80%;
+    width: 90%;
+    max-width: 1280px;
     gap: 10px;
     margin-top: 50px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "proyect-1 proyect-1 proyect-2"
+    "proyect-4 proyect-3 proyect-3"
+    "proyect-5 proyect-5 proyect-6"
+    "proyect-8 proyect-7 proyect-7";
 }
 
 .proyect-1{
-    width: 100%;
-    grid-column: 1 /span 2;
+    grid-area: proyect-1;
 }
 
 .proyect-2{
-    width: 350px;
-    grid-column: 3;
-    grid-row: 1;
+    grid-area: proyect-2;
 }
 
 .proyect-3{
-    width: 98%;
-    grid-column: 2 /span 3;
+    grid-area: proyect-3;
 }
 
 .proyect-4{
-    width: 100%;
-    grid-column: 1;
-    grid-row: 2;
+    grid-area: proyect-4;
 }
 
 .proyect-5{
-    width: 100%;
-    grid-column: 1 /span 2 ;
-    grid-row: 3;
+    grid-area: proyect-5;
 }
 
 .proyect-6{
-    width: 100%;
-    grid-column: 3;
-    grid-row: 3;
+    grid-area: proyect-6;
 }
 
 .proyect-7{
-    width: 100%;
-    grid-column: 2 /span 3;
-    grid-row: 4;
-}
-
-.img-proyect-3{
-    transform: scaleY(0.92);
-    width: 90%;
-}
-
-.img-proyect-5{
-    transform: scaleY(0.95);
-    width: 95%;
-}
-
-.img-proyect-7{
-    transform: scaleY(0.95);
-    width: 75%;
+    grid-area: proyect-7;
 }
 
 .proyect-8{
-    width: 100%;
-    grid-column: 1;
-    grid-row: 4;
+    grid-area: proyect-8;
 }
 
 /*-------------- TRAYECTORY --------------*/
@@ -488,6 +469,7 @@ body{
 
 .footer-rights{
     margin-left: 20px;
+    width: 50%;
 }
 
 /*-------------- CONTACT --------------*/
@@ -678,7 +660,53 @@ input::placeholder, textarea::placeholder{
         gap: 20px;
     }
 
+    .grid{
+        grid-template-areas: 
+        "proyect-1"
+        "proyect-2"
+        "proyect-3"
+        "proyect-4"
+        "proyect-5"
+        "proyect-6"
+        "proyect-7"
+        "proyect-8";
+    }
 
+    .hero-section{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-info-container{
+        display: flex;
+        text-align: center;
+        width: 90%;
+    }
+
+    .hero-info-container p{
+        font-size: 2.5rem;
+    }
+
+    .hero-info-container span{
+        font-size: 4rem;
+    }
+
+    .skills-container-container{
+        width: 100%;
+    }
+
+    .skills-container{
+        width: 90%;
+    }
+
+    .skills-title-container{
+        width: 90%;
+    }
+
+    .info-container{
+        min-width: none;
+    }
 }
 
 @media screen and (min-width: 800px){
