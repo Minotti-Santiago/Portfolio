@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /*-------------- COLORES --------------*/
@@ -30,6 +31,10 @@ body{
     font-family: 'montserrat', sans-serif;
     background-color: var(--color-fondo);
     color: var(--color-texto-blanco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 /*-------------- HEADER --------------*/
@@ -62,6 +67,7 @@ body{
     backdrop-filter: blur(4px);
     background-color: transparent;
     margin-top: 20px;
+    position: relative;
 }
 
 .nav-header{
@@ -262,6 +268,7 @@ body{
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+    scroll-margin-top: 100px;
 }
 
 /*---------- FLIP CARDS ----------*/
@@ -479,6 +486,9 @@ body{
     scale: 1.4;
 }
 
+.footer-rights{
+    margin-left: 20px;
+}
 
 /*-------------- CONTACT --------------*/
 
@@ -489,13 +499,22 @@ body{
     align-items: center;
 }
 
-.contact-container{
+.contact-container-container{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 100px;
     margin-top: 50px;  
+}
+.contact-container{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #fff;
+    background: linear-gradient(-180deg, var(--color-azul), var(--color-morado), var(--color-rosa));
+    box-shadow: 0 0 10px #fff;
 }
 
 .contact-form-container form{
@@ -512,11 +531,25 @@ body{
     border-radius: 5px;
     border: none;
     outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-family: 'montserrat', sans-serif;
+}
+
+.contact-form-container form input:focus, .contact-form-container form textarea:focus{
+    border-bottom: 1px solid #fff;
+    outline: none;
+    border: 1px solid #fff;
 }
 
 .contact-form-container form textarea{
     height: 100px;
     resize: none;
+}
+
+input::placeholder, textarea::placeholder{
+    color: #fff;
 }
 
 .contact-form-container form label{
@@ -538,8 +571,8 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    height: 200px;
+    gap: 50px;
+    height: 150px;
 }
 
 .contact-info-container div{
@@ -553,5 +586,99 @@ body{
     
 }
 
+.btn-container{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+
+}
+
+.btn-container button{
+    background-color: var(--color-fondo);
+    color: var(--color-texto-blanco);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'montserrat', sans-serif;
+}
 
 
+.nav-btn{
+    width: 25px;
+    fill: #fff;
+    position: absolute;
+    right: 20px;
+    z-index: 40;
+}
+
+.close-menu{
+    display: none;
+    z-index: 20;
+}
+
+/*-------------- MEDIA QUERIES --------------*/
+
+@media (max-width: 768px) {
+
+    .header-container{
+        width: 100%;
+    }
+    
+    .nav-header{
+        width: 0%;
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        z-index: 10;
+        background-color: var(--color-fondo);
+        display: block;
+        transition: all .5s ease-in-out;
+        overflow: hidden;
+    }
+    
+    .ul-nav-header{
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-top:10vh;
+        width: 100%;
+    }
+
+    .ul-nav-header li{
+        z-index: 20;
+    }
+
+    .contact-container-container{
+        width: 100%;
+    }
+
+    .contact-container{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .contact-form-container form input, .contact-form-container form textarea{
+        width: 100%;
+    }
+
+    .contact-form-container-item{
+        width: 100%;
+        align-items: start;
+    }
+
+    .contact-form-container form{
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 800px){
+
+    .nav-btn{
+        display: none !important;
+    }
+    
+}
