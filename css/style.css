@@ -309,6 +309,7 @@ body{
     background-color: var(--color-gradient);
     overflow: hidden;
     border-radius: 5px;
+    height: 220px;
 }
 
 .flip-card-back {
@@ -379,6 +380,11 @@ body{
 
 .proyect-8{
     grid-area: proyect-8;
+}
+
+.img-proyect-1,.img-proyect-3, .img-proyect-5, .img-proyect-7{
+    height: 220px;
+    width: fit-content;
 }
 
 /*-------------- TRAYECTORY --------------*/
