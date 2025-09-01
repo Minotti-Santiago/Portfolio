@@ -253,7 +253,6 @@ body{
     animation: fillBar 1.5s ease-out forwards;
 }
 
-/* Configuración específica para cada barra */
 .knowledge-bar-html { --target-width: 80%; }
 .knowledge-bar-css { --target-width: 90%; }
 .knowledge-bar-js { --target-width: 25%; }
@@ -282,7 +281,7 @@ body{
 
 .flip-card {
     height: 220px;
-    perspective: 1000px; /* For 3D effect */
+    perspective: 1000px; 
 }
 
 .flip-card-inner {
@@ -290,15 +289,15 @@ body{
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s; /* Smooth flip animation */
-    transform-style: preserve-3d; /* Preserve 3D space for children */
+    transition: transform 0.6s; 
+    transform-style: preserve-3d; 
 }
 
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hide the back when flipped away */
+    backface-visibility: hidden; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -306,7 +305,6 @@ body{
 }
 
 .flip-card-front {
-    background-color: var(--color-gradient);
     overflow: hidden;
     border-radius: 5px;
     height: 220px;
@@ -319,7 +317,7 @@ body{
     gap: 20px;
     background:linear-gradient(to left, var(--color-gradient), var(--color-morado));
     filter: contrast(150%);
-    transform: rotateY(180deg); /* Start with the back hidden */
+    transform: rotateY(180deg);
 }
 
 .flip-card-back h3{
@@ -327,7 +325,7 @@ body{
 }
 
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg); /* Flip on hover */
+    transform: rotateY(180deg); 
 }
 
 .proyect-img{
@@ -343,48 +341,7 @@ body{
     max-width: 1280px;
     gap: 10px;
     margin-top: 50px;
-    grid-template-areas: 
-    "proyect-1 proyect-1 proyect-2"
-    "proyect-4 proyect-3 proyect-3"
-    "proyect-5 proyect-5 proyect-6"
-    "proyect-8 proyect-7 proyect-7";
-}
-
-.proyect-1{
-    grid-area: proyect-1;
-}
-
-.proyect-2{
-    grid-area: proyect-2;
-}
-
-.proyect-3{
-    grid-area: proyect-3;
-}
-
-.proyect-4{
-    grid-area: proyect-4;
-}
-
-.proyect-5{
-    grid-area: proyect-5;
-}
-
-.proyect-6{
-    grid-area: proyect-6;
-}
-
-.proyect-7{
-    grid-area: proyect-7;
-}
-
-.proyect-8{
-    grid-area: proyect-8;
-}
-
-.img-proyect-1,.img-proyect-3, .img-proyect-5, .img-proyect-7{
-    height: 220px;
-    width: fit-content;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 /*-------------- TRAYECTORY --------------*/
