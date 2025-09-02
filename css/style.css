@@ -277,6 +277,14 @@ body{
     width: 100%;
 }
 
+.proyect-btn{
+    text-decoration: none;
+    color: var(--color-texto-blanco);
+    background: #141a3a;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
 /*---------- FLIP CARDS ----------*/
 
 .flip-card {
@@ -316,7 +324,6 @@ body{
     align-items: center;
     gap: 20px;
     background:linear-gradient(to left, var(--color-gradient), var(--color-morado));
-    filter: contrast(150%);
     transform: rotateY(180deg);
 }
 
