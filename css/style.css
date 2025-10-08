@@ -296,6 +296,7 @@ body{
     align-items: center;
     margin-top: 100px;
     scroll-margin-top: 100px;
+    overflow:hidden;
 }
 
 .proyects-container{
@@ -303,6 +304,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    overflow:hidden;
 }
 
 .proyect-btn{
